@@ -1,0 +1,52 @@
+<ng-template appPlaceholder></ng-template>
+<div class="container">
+  <div *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="text-align: center">
+      <h3>Branch Admin</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <span class="btn btn-primary btn-xs" (click)="onAddUser()"
+        >Add New Admin</span
+      >
+
+      <br /><br />
+      <div class="table-responsive">
+        <table id="mytable" class="table table-bordred table-striped">
+          <thead>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Branch</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.branchName }}</td>
+              <td>
+                <span class="btn btn-primary btn-xs" (click)="OnEdit(user.id)"
+                  >Edit <span class="glyphicon glyphicon-pencil"></span
+                ></span>
+              </td>
+              <td>
+                <span
+                  class="btn btn-danger btn-xs"
+                  (click)="OnDelete(user.id, user.name)"
+                  >Delete <span class="glyphicon glyphicon-trash"></span
+                ></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
