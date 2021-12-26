@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, pipe, tap, throwError } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { AppUser } from './app-user.model';
-
+import { environment } from 'src/environments/environment';
 export interface AuthResponseData {
   username: string;
   access_token: string;
@@ -21,7 +21,7 @@ export class AuthenicationService {
   user = new BehaviorSubject<AppUser | null>(null);
   private tokenExpirationTimer: any;
 
-  private apiURL = 'https://localhost:5001/API/Authentication/';
+  private apiURL = `${environment.apihosturl}/API/Authentication/`;
 
   constructor(private http: HttpClient, private router: Router) {}
 

@@ -2,10 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject, throwError } from 'rxjs';
 import { User } from './user.model';
-
+import { environment } from 'src/environments/environment';
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  apiURL = 'https://localhost:5001/API/Users/';
+  apiURL = `${environment.apihosturl}/API/Users/`;
   private users: User[] = [];
   usersChanged = new Subject<User[]>();
   constructor(private http: HttpClient) {}

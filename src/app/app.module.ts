@@ -18,6 +18,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { AlertComponent } from './shared/alert/alert.component';
 
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
+import { EnvServiceProvider } from './service/env.service.provider';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PlaceholderDirective } from './shared/placeholder/placeholder.directive
   exports: [LoadingSpinnerComponent, AlertComponent, PlaceholderDirective],
   entryComponents: [AlertComponent],
   providers: [
+    EnvServiceProvider,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

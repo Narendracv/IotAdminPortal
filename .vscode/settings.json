@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "/subscriptions/406dc088-7f0b-4807-a583-446c0568e557/resourceGroups/Azure-Learning/providers/Microsoft.Web/sites/iotadmin-portal",
+  "appService.deploySubpath": "dist\\IotAdmin"
+}

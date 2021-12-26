@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
+//import { EnvService } from './service/env.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'IotAdmin';
+ /// constructor(private environment: EnvService) {}
+  title = environment.projectname;
 }

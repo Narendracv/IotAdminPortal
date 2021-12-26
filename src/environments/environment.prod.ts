@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  projectname: 'Iot Admin - Production',
+  apihosturl: 'https://iotadmin-api.azurewebsites.net',
 };
